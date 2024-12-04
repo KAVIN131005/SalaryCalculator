@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>SALARY CALCULATOR</h1>
+    <div class="salary-gif-container">
+        <img src="Calculator gif.gif" alt="Salary Calculator GIF" class="salary-gif">
+    </div>
+    
+
+
+    <!-- Main Container for Dashboard Layout -->
+    <div class="container">
+        <!-- Left Section (Inputs) -->
+        <div class="form-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter name" />
+
+            <label for="worktype">Work Type:</label>
+            <input type="text" id="worktype" placeholder="Enter work type" />
+
+            <label for="rate">Rate per Piece:</label>
+            <input type="number" id="rate" placeholder="Enter rate per piece" />
+
+            <div id="bundleInputSection">
+                <label for="bundleNumber">Bundle Number:</label>
+                <input type="number" id="bundleNumber" placeholder="Enter bundle number" />
+
+                <label for="pieces">Number of Pieces:</label>
+                <input type="number" id="pieces" placeholder="Enter number of pieces" />
+
+                <button id="addBundleButton">Add Bundle</button>
+            </div>
+
+            <button id="nextWorkTypeButton" disabled>Next Work Type</button>
+            <button id="addPersonButton" disabled>Add Another Person</button>
+        </div>
+
+        <!-- Right Section (Outputs) -->
+        <div class="output-container">
+            <!-- Work Data Table -->
+            <h3>Work Data</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Work Type</th>
+                        <th>Bundle Number</th>
+                        <th>Number of Pieces</th>
+                        <th>Rate</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+
+            <!-- Individual Work Summary -->
+            <h3>Individual Work Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Work Type</th>
+                        <th>Number of Pieces</th>
+                        <th>Total Payment</th>
+                    </tr>
+                </thead>
+                <tbody id="individualSummaryBody"></tbody>
+            </table>
+
+            <!-- Contractor Work Summary -->
+            <h3>Contractor Work Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Work Type</th>
+                        <th>Number of Pieces</th>
+                        <th>Total Payment</th>
+                    </tr>
+                </thead>
+                <tbody id="contractorSummaryBody"></tbody>
+            </table>
+
+            <!-- Salary Summary -->
+            <div id="salarySummary">
+                <h3>Contractor Salary: <span id="contractorSalary">0</span></h3>
+                <button id="calculateContractorSalaryButton">Calculate Contractor Salary</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

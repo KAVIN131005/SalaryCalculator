@@ -1,0 +1,276 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #2d2d2d; /* Dark Grey Background */
+    color: #fff;
+}
+
+/* Container for the whole layout */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 2 columns layout */
+    gap: 40px;
+    max-width: 1200px;
+    width: 180%;
+    padding: 30px;
+    background-color: #2d2d2d;
+}
+
+/* Form container on the left */
+.form-container {
+    background-color: #333; /* Darker grey for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.7); /* Luminous green box-shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling for labels */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+    text-transform: uppercase;
+}
+
+/* Styling for inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    box-sizing: border-box;
+    background-color: #555;
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    background-color: #444;
+    border-color: #9acd32; /* Yellow-Green focus color */
+}
+
+/* Button styles */
+button {
+    background-color: #9acd32; /* Yellow-green */
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #7b9e2f; /* Darker shade on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Luminous green hover shadow */
+}
+
+button:active {
+    background-color: #6b8e2f; /* Even darker shade when clicked */
+}
+
+/* Styling for the right-side output tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #444;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td {
+    background-color: #555;
+    font-size: 14px;
+}
+
+/* Styling for alternate row colors */
+tr:nth-child(even) td {
+    background-color: #666;
+}
+
+tr:nth-child(odd) td {
+    background-color: #555;
+}
+
+/* Hover effects for table rows */
+tr:hover td {
+    background-color: #7b9e2f; /* Yellow-green hover effect for rows */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+}
+
+/* Summary section with background shadow */
+#salarySummary {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.7); /* Luminous green box-shadow */
+    margin-top: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+#salarySummary:hover {
+    box-shadow: 0 8px 24px rgba(0, 255, 0, 0.8); /* Luminous green box-shadow hover effect */
+}
+
+#contractorSalary {
+    font-weight: bold;
+    font-size: 20px;
+    color: #9acd32; /* Yellow-Green for salary */
+}
+
+/* Heading styles */
+/* h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #9acd32; 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+} */
+
+h3 {
+    color: #f0f0f0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+/* Add space between the tables for clarity */
+table + table {
+    margin-top: 40px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    /* Change the container grid to single column on smaller screens */
+    .container {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+        padding: 10px;
+    }
+
+    /* Adjust form padding on small screens */
+    .form-container {
+        padding: 15px;
+    }
+
+    /* Make the form fields, buttons and tables fully responsive */
+    input, button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%; /* Ensure the button takes full width on small screens */
+    }
+
+    /* Adjust table padding and font sizes on smaller screens */
+    table th, table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Stack tables vertically on mobile */
+    table + table {
+        margin-top: 30px;
+    }
+
+    /* Make sure headings look good on mobile */
+    h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* Add padding for salary summary on mobile */
+    #salarySummary {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further optimization for very small screens like phones in portrait mode */
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    input, button {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px;
+    }
+
+    table th, table td {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+}
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #9acd32; /* Yellow-Green */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-right: -80px;
+}
+
+.salary-gif-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Center the image below the heading */
+    margin-top: auto;
+}
+
+.salary-gif {
+    width: 160%; /* Makes the image responsive */
+    max-width: 600px; /* Optional: you can set a max-width for the image */
+    border-radius: 20px; /* Reduced border radius */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    margin-left: -120px;
+    margin-top: -500px;
+}
+
+/* Luminous hover effect */
+.salary-gif:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    box-shadow: 0 0 15px rgba(153, 255, 51, 0.8); /* Green glowing effect */
+    filter: brightness(1.2); /* Increases brightness on hover */
+}
+
